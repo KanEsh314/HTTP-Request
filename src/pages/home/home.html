@@ -1,14 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Card Background
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="card-background-page">
+<ion-card *ngFor="let person of category">
+	<img src="assets/cardbg/cb1.jpeg"/>
+	<div class="card-title">{{person.name}}</div>
+	<div class="card-subtitle">{{person.picURL}}</div>
+</ion-card>
 </ion-content>

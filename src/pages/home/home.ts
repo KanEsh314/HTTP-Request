@@ -1,14 +1,25 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { GetFitProvider } from '../../providers/get-fit/get-fit';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers : [GetFitProvider]
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+public category: any;
 
+  constructor(public navCtrl: NavController , public getFitCategories : GetFitProvider) {
+    this.loadCategories();
   }
 
+  loadCategories(){
+    this.getFitCategories.load()
+    .then(data => {
+      this.category = data;
+      console.log(data);
+    });
+  }
 }
