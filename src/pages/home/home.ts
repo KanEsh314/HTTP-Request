@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { GetFitProvider } from '../../providers/get-fit/get-fit';
+import { MainPage } from '../main/main';
 
 @Component({
   selector: 'page-home',
@@ -21,5 +22,9 @@ public category: any;
       this.category = data;
       console.log(data);
     });
+  }
+
+  checkCoach(){
+    this.navCtrl.push(MainPage);
   }
 }

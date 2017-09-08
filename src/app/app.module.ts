@@ -8,11 +8,16 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { GetFitProvider } from '../providers/get-fit/get-fit';
+import { MainPage } from '../pages/main/main';
+import { GetTypeProvider } from '../providers/get-type/get-type';
+import { DetailPage } from '../pages/detail/detail'; 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    MainPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -22,13 +27,16 @@ import { GetFitProvider } from '../providers/get-fit/get-fit';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MainPage,
+    DetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GetFitProvider
+    GetFitProvider,
+    GetTypeProvider
   ]
 })
 export class AppModule {}

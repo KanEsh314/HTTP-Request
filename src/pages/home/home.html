@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Card Background
     </ion-title>
@@ -7,9 +7,9 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-<ion-card *ngFor="let person of category">
-	<img src="assets/cardbg/cb1.jpeg"/>
+<ion-card *ngFor="let person of category" (click)="checkCoach()">
+	<img src="{{person.picURL}}"/>
 	<div class="card-title">{{person.name}}</div>
-	<div class="card-subtitle">{{person.picURL}}</div>
+	<div class="card-subtitle">40 Activities</div>
 </ion-card>
 </ion-content>
